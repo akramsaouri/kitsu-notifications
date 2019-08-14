@@ -1,0 +1,11 @@
+{
+  "name": "kitsu-notifications",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "date-fns": "^1.30.1",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
+    "onesignal-node": "^2.1.1"
+  }
+}
