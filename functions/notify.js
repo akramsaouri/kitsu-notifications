@@ -1,8 +1,9 @@
 const fetch = require('node-fetch');
 const isToday = require('date-fns/is_today')
 
-exports.handler = async () => {
-  const url = `http://localhost:8888/.netlify/functions/sync?kitsuUserId=362246` // TODO: make this dynamic
+exports.handler = async (event) => {
+  const { kitsuUserId } = event.queryStringParameters
+  const url = `http://${event.headers.host}/.netlify/functions/sync?kitsuUserId=${kitsuUserId}` // TODO: make this dynamic
   const { data, errors } = await fetch(url).then(res => res.json())
   if (errors) {
     return {
